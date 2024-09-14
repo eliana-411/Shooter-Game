@@ -23,6 +23,7 @@ from models.nave import Nave
 from models.meteor import Meteor
 from models.bullet import Bullet
 from models.recover_life import Recover_life
+from models.collision import Collision
 
 # Función para dibujar texto en pantalla
 def draw_text(surface, text, size, x, y):
@@ -67,6 +68,7 @@ def add_life():
 all_sprites = pygame.sprite.Group()
 bullets = pygame.sprite.Group()
 meteor_list = pygame.sprite.Group()
+Collision_list = pygame.sprite.Group()
 life_list = pygame.sprite.Group()
 for _ in range(8):
     add_meteor()
@@ -101,6 +103,8 @@ while running:
     for hit in hits:
         score += 10
         explosion_sound.play()
+        collision = Collision(hit.rect.center)
+        all_sprites.add(collision)
         add_meteor()
 
     # Colisiones entre la nave y los meteoros
