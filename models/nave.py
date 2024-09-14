@@ -34,5 +34,10 @@ class Nave(pygame.sprite.Sprite):
         bullet = Bullet(self.rect.centerx, self.rect.top)
         all_sprites.add(bullet) 
         bullets.add(bullet)
+        bullet_sound.play()
+
+# Cargar sonido disparo
+bullet_sound = pygame.mixer.Sound('assets\laser_sound.ogg')
+bullet_sound.set_volume(0.15)
 
 
