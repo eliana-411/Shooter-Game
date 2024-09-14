@@ -16,6 +16,7 @@ class Nave(pygame.sprite.Sprite):
         self.rect.centerx = WIDTH // 2
         self.rect.bottom = HEIGHT - 10
         self.speed_x = 0
+        self.life = 100
 
     def update(self):
         self.speed_x = 0
@@ -37,7 +38,7 @@ class Nave(pygame.sprite.Sprite):
         bullet_sound.play()
 
 # Cargar sonido disparo
-bullet_sound = pygame.mixer.Sound('assets\laser_sound.ogg')
+bullet_sound = pygame.mixer.Sound('assets/laser_sound.ogg')
 bullet_sound.set_volume(0.15)
 
 
