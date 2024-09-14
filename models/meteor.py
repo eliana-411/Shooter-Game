@@ -27,5 +27,3 @@ class Meteor(pygame.sprite.Sprite):
             self.rect.y = random.randrange(-100, -40)
             self.speedy = random.randrange(1, 10)
 
-
-meteor_list = [Meteor() for _ in range(8)]

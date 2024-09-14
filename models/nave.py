@@ -1,4 +1,5 @@
 import pygame
+from models.bullet import Bullet
 
 WIDTH = 800
 HEIGHT = 600
@@ -9,7 +10,7 @@ class Nave(pygame.sprite.Sprite):
 
     def __init__(self):
         super().__init__()
-        self.image = pygame.image.load('assets/nave.png').convert().convert()
+        self.image = pygame.image.load('assets/nave.png').convert()
         self.image.set_colorkey(BLACK)
         self.rect = self.image.get_rect()
         self.rect.centerx = WIDTH // 2
@@ -28,3 +29,10 @@ class Nave(pygame.sprite.Sprite):
             self.rect.right = WIDTH
         if self.rect.left < 0:
             self.rect.left = 0
+
+    def shoot(self, all_sprites, bullets):
+        bullet = Bullet(self.rect.centerx, self.rect.top)
+        all_sprites.add(bullet) 
+        bullets.add(bullet)
+
+
