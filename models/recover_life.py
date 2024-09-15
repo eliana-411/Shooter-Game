@@ -8,7 +8,7 @@ BLACK = (0, 0, 0)
 class Recover_life(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
-        self.image = pygame.image.load('assets/recover_life2.png').convert()
+        self.image = pygame.image.load('assets/recover_life.png').convert()
         self.image.set_colorkey((BLACK))  
         self.rect = self.image.get_rect()
         self.rect.x = random.randrange(WIDTH - self.rect.width)
